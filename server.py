@@ -37,7 +37,7 @@ def query():
     try:
         json_response = json.loads(response)
     except json.JSONDecodeError:
-        return jsonify({'error': 'Failed to decode response from server'}), 500
+        return jsonify({'error': 'Failed to decode response from server', 'response': response}), 500
 
     return jsonify(json_response)
 
